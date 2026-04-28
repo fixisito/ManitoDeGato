@@ -6,7 +6,7 @@ namespace ManitoDeGato
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormPrincipal());
+            Application.Run(new FormLogin());
         }
     }
 }

@@ -7,28 +7,31 @@ namespace ManitoDeGato
     public partial class FormAgendamientos : Form
     {
         private readonly RepositorioAgendamientos repositorioAgendamientos = new();
-        private readonly RepositorioEstilistas    repositorioEstilistas    = new();
-        private readonly RepositorioServicios     repositorioServicios     = new();
+        private readonly RepositorioEstilistas repositorioEstilistas = new();
+        private readonly RepositorioServicios repositorioServicios = new();
         private int idSeleccionado = -1;
+        private Usuario usuarioActual;
 
-        public FormAgendamientos()
+        public FormAgendamientos(Usuario usuario)
         {
             InitializeComponent();
+            usuarioActual = usuario;
+            ConfigurarPermisos();
             ConfigurarLista();
             CargarDatos();
         }
 
         private void ConfigurarLista()
         {
-            listAgendamientos.View          = View.Details;
+            listAgendamientos.View = View.Details;
             listAgendamientos.FullRowSelect = true;
-            listAgendamientos.GridLines     = true;
-            listAgendamientos.Columns.Add("ID",         50);
-            listAgendamientos.Columns.Add("Cliente",   150);
+            listAgendamientos.GridLines = true;
+            listAgendamientos.Columns.Add("ID", 50);
+            listAgendamientos.Columns.Add("Cliente", 150);
             listAgendamientos.Columns.Add("Estilista", 140);
-            listAgendamientos.Columns.Add("Servicio",  160);
-            listAgendamientos.Columns.Add("Fecha",     140);
-            listAgendamientos.Columns.Add("Estado",    100);
+            listAgendamientos.Columns.Add("Servicio", 160);
+            listAgendamientos.Columns.Add("Fecha", 140);
+            listAgendamientos.Columns.Add("Estado", 100);
         }
 
         private void CargarDatos()
@@ -37,7 +40,7 @@ namespace ManitoDeGato
             foreach (var a in repositorioAgendamientos.ObtenerTodos())
             {
                 var estilista = repositorioEstilistas.ObtenerPorRut(a.RutEstilista);
-                var servicio  = repositorioServicios.ObtenerPorId(a.IdServicio);
+                var servicio = repositorioServicios.ObtenerPorId(a.IdServicio);
                 string[] fila =
                 {
                     a.Id.ToString(),
@@ -48,8 +51,8 @@ namespace ManitoDeGato
                     a.Estado
                 };
                 var item = new ListViewItem(fila);
-                if (a.Estado == "Cancelado")   item.ForeColor = System.Drawing.Color.OrangeRed;
-                if (a.Estado == "Completado")  item.ForeColor = System.Drawing.Color.SeaGreen;
+                if (a.Estado == "Cancelado") item.ForeColor = System.Drawing.Color.OrangeRed;
+                if (a.Estado == "Completado") item.ForeColor = System.Drawing.Color.SeaGreen;
                 listAgendamientos.Items.Add(item);
             }
         }
@@ -78,10 +81,10 @@ namespace ManitoDeGato
             repositorioAgendamientos.Agregar(new Agendamiento
             {
                 NombreCliente = txtNombreCliente.Text.Trim(),
-                RutEstilista  = txtRutEstilista.Text.Trim(),
-                IdServicio    = idServicio,
-                Fecha         = dtpFecha.Value,
-                Estado        = cmbEstado.SelectedItem?.ToString() ?? "Pendiente"
+                RutEstilista = txtRutEstilista.Text.Trim(),
+                IdServicio = idServicio,
+                Fecha = dtpFecha.Value,
+                Estado = cmbEstado.SelectedItem?.ToString() ?? "Pendiente"
             });
             LimpiarCampos();
             CargarDatos();
@@ -132,12 +135,12 @@ namespace ManitoDeGato
 
             repositorioAgendamientos.Modificar(new Agendamiento
             {
-                Id            = idSeleccionado,
+                Id = idSeleccionado,
                 NombreCliente = txtNombreCliente.Text.Trim(),
-                RutEstilista  = txtRutEstilista.Text.Trim(),
-                IdServicio    = idServicio,
-                Fecha         = dtpFecha.Value,
-                Estado        = cmbEstado.SelectedItem?.ToString() ?? "Pendiente"
+                RutEstilista = txtRutEstilista.Text.Trim(),
+                IdServicio = idServicio,
+                Fecha = dtpFecha.Value,
+                Estado = cmbEstado.SelectedItem?.ToString() ?? "Pendiente"
             });
             MessageBox.Show("Agendamiento modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             idSeleccionado = -1;
@@ -153,9 +156,9 @@ namespace ManitoDeGato
                 var agendamiento = repositorioAgendamientos.ObtenerPorId(idSeleccionado);
                 if (agendamiento == null) return;
                 txtNombreCliente.Text = agendamiento.NombreCliente;
-                txtRutEstilista.Text  = agendamiento.RutEstilista;
-                txtIdServicio.Text    = agendamiento.IdServicio.ToString();
-                dtpFecha.Value        = agendamiento.Fecha;
+                txtRutEstilista.Text = agendamiento.RutEstilista;
+                txtIdServicio.Text = agendamiento.IdServicio.ToString();
+                dtpFecha.Value = agendamiento.Fecha;
                 cmbEstado.SelectedItem = agendamiento.Estado;
             }
         }
@@ -165,8 +168,17 @@ namespace ManitoDeGato
             txtNombreCliente.Clear();
             txtRutEstilista.Clear();
             txtIdServicio.Clear();
-            dtpFecha.Value        = DateTime.Now;
+            dtpFecha.Value = DateTime.Now;
             cmbEstado.SelectedIndex = 0;
         }
+
+        private void ConfigurarPermisos()
+        {
+            if (usuarioActual.rol == "Usuario")
+            {
+                btnEliminar.Visible = false;
+            }
+        }
+
     }
 }

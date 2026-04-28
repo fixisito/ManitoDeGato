@@ -8,10 +8,13 @@ namespace ManitoDeGato
     {
         private readonly RepositorioServicios repositorio = new();
         private int idSeleccionado = -1;
+        private Usuario usuarioActual;
 
-        public FormServicios()
+        public FormServicios(Usuario usuario)
         {
             InitializeComponent();
+            usuarioActual = usuario;
+            ConfigurarPermisos();
             ConfigurarLista();
             CargarDatos();
         }
@@ -135,5 +138,21 @@ namespace ManitoDeGato
             txtPrecio.Clear();
             txtDuracion.Clear();
         }
+
+        private void ConfigurarPermisos()
+        {
+            if (usuarioActual.rol != "Admin")
+            {
+                btnAgregar.Visible = false;
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+
+                txtNombre.Enabled = false;
+                txtCategoria.Enabled = false;
+                txtPrecio.Enabled = false;
+                txtDuracion.Enabled = false;
+            }
+        }
+
     }
 }

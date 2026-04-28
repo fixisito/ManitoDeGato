@@ -8,10 +8,13 @@ namespace ManitoDeGato
     {
         private readonly RepositorioEstilistas repositorio = new();
         private int idSeleccionado = -1;
+        private Usuario usuarioActual;
 
-        public FormEstilistas()
+        public FormEstilistas(Usuario usuario)
         {
             InitializeComponent();
+            usuarioActual = usuario;
+            ConfigurarPermisos();
             ConfigurarLista();
             CargarDatos();
         }
@@ -138,5 +141,21 @@ namespace ManitoDeGato
             txtEspecialidad.Clear();
             txtTelefono.Clear();
         }
+
+        private void ConfigurarPermisos()
+        {
+            if (usuarioActual.rol != "Admin")
+            {
+                btnAgregar.Visible = false;
+                btnModificar.Visible = false;
+                btnEliminar.Visible = false;
+
+                txtNombre.Enabled = false;
+                txtRut.Enabled = false;
+                txtEspecialidad.Enabled = false;
+                txtTelefono.Enabled = false;
+            }
+        }
+
     }
 }

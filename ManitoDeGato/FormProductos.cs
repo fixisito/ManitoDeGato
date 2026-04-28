@@ -8,10 +8,13 @@ namespace ManitoDeGato
     {
         private readonly RepositorioProductos repositorio = new();
         private int idSeleccionado = -1;
+        private Usuario usuarioActual;
 
-        public FormProductos()
+        public FormProductos(Usuario usuario)
         {
             InitializeComponent();
+            usuarioActual = usuario;
+            ConfigurarPermisos();
             ConfigurarLista();
             CargarDatos();
         }
@@ -141,5 +144,15 @@ namespace ManitoDeGato
             txtStock.Clear();
             txtPrecio.Clear();
         }
+
+        private void ConfigurarPermisos()
+        {
+            if (usuarioActual.rol != "Admin")
+            {
+                MessageBox.Show("No tienes acceso a productos");
+                this.Close();
+            }
+        }
+
     }
 }

@@ -12,185 +12,239 @@ namespace ManitoDeGato
 
         private void InitializeComponent()
         {
-            this.panelFormulario   = new System.Windows.Forms.Panel();
-            this.lblTitulo         = new System.Windows.Forms.Label();
-            this.lblNombreCliente  = new System.Windows.Forms.Label();
-            this.txtNombreCliente  = new System.Windows.Forms.TextBox();
-            this.lblRutEstilista   = new System.Windows.Forms.Label();
-            this.txtRutEstilista   = new System.Windows.Forms.TextBox();
-            this.lblIdServicio     = new System.Windows.Forms.Label();
-            this.txtIdServicio     = new System.Windows.Forms.TextBox();
-            this.lblFecha          = new System.Windows.Forms.Label();
-            this.dtpFecha          = new System.Windows.Forms.DateTimePicker();
-            this.lblEstado         = new System.Windows.Forms.Label();
-            this.cmbEstado         = new System.Windows.Forms.ComboBox();
-            this.btnAgregar        = new System.Windows.Forms.Button();
-            this.btnModificar      = new System.Windows.Forms.Button();
-            this.btnEliminar       = new System.Windows.Forms.Button();
-            this.panelLista        = new System.Windows.Forms.Panel();
-            this.listAgendamientos = new System.Windows.Forms.ListView();
-
-            this.panelFormulario.SuspendLayout();
-            this.panelLista.SuspendLayout();
-            this.SuspendLayout();
-
-            this.panelFormulario.Controls.Add(this.btnEliminar);
-            this.panelFormulario.Controls.Add(this.btnModificar);
-            this.panelFormulario.Controls.Add(this.btnAgregar);
-            this.panelFormulario.Controls.Add(this.cmbEstado);
-            this.panelFormulario.Controls.Add(this.lblEstado);
-            this.panelFormulario.Controls.Add(this.dtpFecha);
-            this.panelFormulario.Controls.Add(this.lblFecha);
-            this.panelFormulario.Controls.Add(this.txtIdServicio);
-            this.panelFormulario.Controls.Add(this.lblIdServicio);
-            this.panelFormulario.Controls.Add(this.txtRutEstilista);
-            this.panelFormulario.Controls.Add(this.lblRutEstilista);
-            this.panelFormulario.Controls.Add(this.txtNombreCliente);
-            this.panelFormulario.Controls.Add(this.lblNombreCliente);
-            this.panelFormulario.Controls.Add(this.lblTitulo);
-            this.panelFormulario.Dock     = System.Windows.Forms.DockStyle.Left;
-            this.panelFormulario.Name     = "panelFormulario";
-            this.panelFormulario.Size     = new System.Drawing.Size(295, 600);
-            this.panelFormulario.TabIndex = 0;
-
-            this.lblTitulo.AutoSize  = false;
-            this.lblTitulo.Font      = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location  = new System.Drawing.Point(10, 18);
-            this.lblTitulo.Name      = "lblTitulo";
-            this.lblTitulo.Size      = new System.Drawing.Size(270, 30);
-            this.lblTitulo.TabIndex  = 0;
-            this.lblTitulo.Text      = "Agendamientos";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-            this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Font     = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblNombreCliente.Location = new System.Drawing.Point(15, 65);
-            this.lblNombreCliente.Name     = "lblNombreCliente";
-            this.lblNombreCliente.TabIndex = 1;
-            this.lblNombreCliente.Text     = "Nombre del cliente:";
-
-            this.txtNombreCliente.Font     = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtNombreCliente.Location = new System.Drawing.Point(15, 83);
-            this.txtNombreCliente.Name     = "txtNombreCliente";
-            this.txtNombreCliente.Size     = new System.Drawing.Size(258, 25);
-            this.txtNombreCliente.TabIndex = 2;
-
-            this.lblRutEstilista.AutoSize = true;
-            this.lblRutEstilista.Font     = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblRutEstilista.Location = new System.Drawing.Point(15, 122);
-            this.lblRutEstilista.Name     = "lblRutEstilista";
-            this.lblRutEstilista.TabIndex = 3;
-            this.lblRutEstilista.Text     = "RUT del estilista:";
-
-            this.txtRutEstilista.Font     = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtRutEstilista.Location = new System.Drawing.Point(15, 140);
-            this.txtRutEstilista.Name     = "txtRutEstilista";
-            this.txtRutEstilista.Size     = new System.Drawing.Size(258, 25);
-            this.txtRutEstilista.TabIndex = 4;
-
-            this.lblIdServicio.AutoSize = true;
-            this.lblIdServicio.Font     = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblIdServicio.Location = new System.Drawing.Point(15, 179);
-            this.lblIdServicio.Name     = "lblIdServicio";
-            this.lblIdServicio.TabIndex = 5;
-            this.lblIdServicio.Text     = "ID del servicio:";
-
-            this.txtIdServicio.Font     = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtIdServicio.Location = new System.Drawing.Point(15, 197);
-            this.txtIdServicio.Name     = "txtIdServicio";
-            this.txtIdServicio.Size     = new System.Drawing.Size(140, 25);
-            this.txtIdServicio.TabIndex = 6;
-
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font     = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblFecha.Location = new System.Drawing.Point(15, 238);
-            this.lblFecha.Name     = "lblFecha";
-            this.lblFecha.TabIndex = 7;
-            this.lblFecha.Text     = "Fecha y hora:";
-
-            this.dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm";
-            this.dtpFecha.Format       = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecha.Location     = new System.Drawing.Point(15, 257);
-            this.dtpFecha.Name         = "dtpFecha";
-            this.dtpFecha.Size         = new System.Drawing.Size(258, 25);
-            this.dtpFecha.TabIndex     = 8;
-
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font     = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblEstado.Location = new System.Drawing.Point(15, 300);
-            this.lblEstado.Name     = "lblEstado";
-            this.lblEstado.TabIndex = 9;
-            this.lblEstado.Text     = "Estado:";
-
-            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.Font          = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbEstado.Items.AddRange(new object[] { "Pendiente", "Completado", "Cancelado" });
-            this.cmbEstado.Location      = new System.Drawing.Point(15, 318);
-            this.cmbEstado.Name          = "cmbEstado";
-            this.cmbEstado.Size          = new System.Drawing.Size(258, 25);
-            this.cmbEstado.TabIndex      = 10;
-            this.cmbEstado.SelectedIndex = 0;
-
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle                 = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font                      = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAgregar.Location                  = new System.Drawing.Point(15, 375);
-            this.btnAgregar.Name                      = "btnAgregar";
-            this.btnAgregar.Size                      = new System.Drawing.Size(258, 42);
-            this.btnAgregar.TabIndex                  = 11;
-            this.btnAgregar.Text                      = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor   = true;
-            this.btnAgregar.Click                    += new System.EventHandler(this.btnAgregar_Click);
-
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle                 = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font                      = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.Location                  = new System.Drawing.Point(15, 428);
-            this.btnModificar.Name                      = "btnModificar";
-            this.btnModificar.Size                      = new System.Drawing.Size(258, 42);
-            this.btnModificar.TabIndex                  = 12;
-            this.btnModificar.Text                      = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor   = true;
-            this.btnModificar.Click                    += new System.EventHandler(this.btnModificar_Click);
-
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle                 = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font                      = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.Location                  = new System.Drawing.Point(15, 481);
-            this.btnEliminar.Name                      = "btnEliminar";
-            this.btnEliminar.Size                      = new System.Drawing.Size(258, 42);
-            this.btnEliminar.TabIndex                  = 13;
-            this.btnEliminar.Text                      = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor   = true;
-            this.btnEliminar.Click                    += new System.EventHandler(this.btnEliminar_Click);
-
-            this.panelLista.Controls.Add(this.listAgendamientos);
-            this.panelLista.Dock     = System.Windows.Forms.DockStyle.Fill;
-            this.panelLista.Name     = "panelLista";
-            this.panelLista.Padding  = new System.Windows.Forms.Padding(10);
-            this.panelLista.TabIndex = 1;
-
-            this.listAgendamientos.Dock                            = System.Windows.Forms.DockStyle.Fill;
-            this.listAgendamientos.FullRowSelect                   = true;
-            this.listAgendamientos.GridLines                       = true;
-            this.listAgendamientos.Name                            = "listAgendamientos";
-            this.listAgendamientos.TabIndex                        = 0;
-            this.listAgendamientos.UseCompatibleStateImageBehavior = false;
-            this.listAgendamientos.View                            = System.Windows.Forms.View.Details;
-            this.listAgendamientos.SelectedIndexChanged           += new System.EventHandler(this.listAgendamientos_SelectedIndexChanged);
-
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize          = new System.Drawing.Size(850, 600);
-            this.Controls.Add(this.panelLista);
-            this.Controls.Add(this.panelFormulario);
-            this.Name = "FormAgendamientos";
-            this.Text = "Agendamientos";
-
-            this.panelFormulario.ResumeLayout(false);
-            this.panelFormulario.PerformLayout();
-            this.panelLista.ResumeLayout(false);
-            this.ResumeLayout(false);
+            panelFormulario = new Panel();
+            btnEliminar = new Button();
+            btnModificar = new Button();
+            btnAgregar = new Button();
+            cmbEstado = new ComboBox();
+            lblEstado = new Label();
+            dtpFecha = new DateTimePicker();
+            lblFecha = new Label();
+            txtIdServicio = new TextBox();
+            lblIdServicio = new Label();
+            txtRutEstilista = new TextBox();
+            lblRutEstilista = new Label();
+            txtNombreCliente = new TextBox();
+            lblNombreCliente = new Label();
+            lblTitulo = new Label();
+            panelLista = new Panel();
+            listAgendamientos = new ListView();
+            panelFormulario.SuspendLayout();
+            panelLista.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panelFormulario
+            // 
+            panelFormulario.Controls.Add(btnEliminar);
+            panelFormulario.Controls.Add(btnModificar);
+            panelFormulario.Controls.Add(btnAgregar);
+            panelFormulario.Controls.Add(cmbEstado);
+            panelFormulario.Controls.Add(lblEstado);
+            panelFormulario.Controls.Add(dtpFecha);
+            panelFormulario.Controls.Add(lblFecha);
+            panelFormulario.Controls.Add(txtIdServicio);
+            panelFormulario.Controls.Add(lblIdServicio);
+            panelFormulario.Controls.Add(txtRutEstilista);
+            panelFormulario.Controls.Add(lblRutEstilista);
+            panelFormulario.Controls.Add(txtNombreCliente);
+            panelFormulario.Controls.Add(lblNombreCliente);
+            panelFormulario.Controls.Add(lblTitulo);
+            panelFormulario.Dock = DockStyle.Left;
+            panelFormulario.Location = new Point(0, 0);
+            panelFormulario.Margin = new Padding(3, 4, 3, 4);
+            panelFormulario.Name = "panelFormulario";
+            panelFormulario.Size = new Size(337, 800);
+            panelFormulario.TabIndex = 0;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnEliminar.Location = new Point(17, 641);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(295, 56);
+            btnEliminar.TabIndex = 13;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnModificar.Location = new Point(17, 571);
+            btnModificar.Margin = new Padding(3, 4, 3, 4);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(295, 56);
+            btnModificar.TabIndex = 12;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.FlatAppearance.BorderSize = 0;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnAgregar.Location = new Point(17, 500);
+            btnAgregar.Margin = new Padding(3, 4, 3, 4);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(295, 56);
+            btnAgregar.TabIndex = 11;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // cmbEstado
+            // 
+            cmbEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEstado.Font = new Font("Segoe UI", 10F);
+            cmbEstado.Items.AddRange(new object[] { "Pendiente", "Completado", "Cancelado" });
+            cmbEstado.Location = new Point(17, 424);
+            cmbEstado.Margin = new Padding(3, 4, 3, 4);
+            cmbEstado.Name = "cmbEstado";
+            cmbEstado.Size = new Size(294, 31);
+            cmbEstado.TabIndex = 10;
+            // 
+            // lblEstado
+            // 
+            lblEstado.AutoSize = true;
+            lblEstado.Font = new Font("Segoe UI", 9.5F);
+            lblEstado.Location = new Point(17, 400);
+            lblEstado.Name = "lblEstado";
+            lblEstado.Size = new Size(59, 21);
+            lblEstado.TabIndex = 9;
+            lblEstado.Text = "Estado:";
+            // 
+            // dtpFecha
+            // 
+            dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm";
+            dtpFecha.Format = DateTimePickerFormat.Custom;
+            dtpFecha.Location = new Point(17, 343);
+            dtpFecha.Margin = new Padding(3, 4, 3, 4);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(294, 27);
+            dtpFecha.TabIndex = 8;
+            // 
+            // lblFecha
+            // 
+            lblFecha.AutoSize = true;
+            lblFecha.Font = new Font("Segoe UI", 9.5F);
+            lblFecha.Location = new Point(17, 317);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(101, 21);
+            lblFecha.TabIndex = 7;
+            lblFecha.Text = "Fecha y hora:";
+            // 
+            // txtIdServicio
+            // 
+            txtIdServicio.Font = new Font("Segoe UI", 10F);
+            txtIdServicio.Location = new Point(17, 263);
+            txtIdServicio.Margin = new Padding(3, 4, 3, 4);
+            txtIdServicio.Name = "txtIdServicio";
+            txtIdServicio.Size = new Size(159, 30);
+            txtIdServicio.TabIndex = 6;
+            // 
+            // lblIdServicio
+            // 
+            lblIdServicio.AutoSize = true;
+            lblIdServicio.Font = new Font("Segoe UI", 9.5F);
+            lblIdServicio.Location = new Point(17, 239);
+            lblIdServicio.Name = "lblIdServicio";
+            lblIdServicio.Size = new Size(110, 21);
+            lblIdServicio.TabIndex = 5;
+            lblIdServicio.Text = "ID del servicio:";
+            // 
+            // txtRutEstilista
+            // 
+            txtRutEstilista.Font = new Font("Segoe UI", 10F);
+            txtRutEstilista.Location = new Point(17, 187);
+            txtRutEstilista.Margin = new Padding(3, 4, 3, 4);
+            txtRutEstilista.Name = "txtRutEstilista";
+            txtRutEstilista.Size = new Size(294, 30);
+            txtRutEstilista.TabIndex = 4;
+            // 
+            // lblRutEstilista
+            // 
+            lblRutEstilista.AutoSize = true;
+            lblRutEstilista.Font = new Font("Segoe UI", 9.5F);
+            lblRutEstilista.Location = new Point(17, 163);
+            lblRutEstilista.Name = "lblRutEstilista";
+            lblRutEstilista.Size = new Size(123, 21);
+            lblRutEstilista.TabIndex = 3;
+            lblRutEstilista.Text = "RUT del estilista:";
+            // 
+            // txtNombreCliente
+            // 
+            txtNombreCliente.Font = new Font("Segoe UI", 10F);
+            txtNombreCliente.Location = new Point(17, 111);
+            txtNombreCliente.Margin = new Padding(3, 4, 3, 4);
+            txtNombreCliente.Name = "txtNombreCliente";
+            txtNombreCliente.Size = new Size(294, 30);
+            txtNombreCliente.TabIndex = 2;
+            // 
+            // lblNombreCliente
+            // 
+            lblNombreCliente.AutoSize = true;
+            lblNombreCliente.Font = new Font("Segoe UI", 9.5F);
+            lblNombreCliente.Location = new Point(17, 87);
+            lblNombreCliente.Name = "lblNombreCliente";
+            lblNombreCliente.Size = new Size(145, 21);
+            lblNombreCliente.TabIndex = 1;
+            lblNombreCliente.Text = "Nombre del cliente:";
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblTitulo.Location = new Point(11, 24);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(309, 40);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Agendamientos";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelLista
+            // 
+            panelLista.Controls.Add(listAgendamientos);
+            panelLista.Dock = DockStyle.Fill;
+            panelLista.Location = new Point(337, 0);
+            panelLista.Margin = new Padding(3, 4, 3, 4);
+            panelLista.Name = "panelLista";
+            panelLista.Padding = new Padding(11, 13, 11, 13);
+            panelLista.Size = new Size(634, 800);
+            panelLista.TabIndex = 1;
+            // 
+            // listAgendamientos
+            // 
+            listAgendamientos.Dock = DockStyle.Fill;
+            listAgendamientos.FullRowSelect = true;
+            listAgendamientos.GridLines = true;
+            listAgendamientos.Location = new Point(11, 13);
+            listAgendamientos.Margin = new Padding(3, 4, 3, 4);
+            listAgendamientos.Name = "listAgendamientos";
+            listAgendamientos.Size = new Size(612, 774);
+            listAgendamientos.TabIndex = 0;
+            listAgendamientos.UseCompatibleStateImageBehavior = false;
+            listAgendamientos.View = View.Details;
+            listAgendamientos.SelectedIndexChanged += listAgendamientos_SelectedIndexChanged;
+            // 
+            // FormAgendamientos
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(971, 800);
+            Controls.Add(panelLista);
+            Controls.Add(panelFormulario);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FormAgendamientos";
+            Text = "Agendamientos";
+            panelFormulario.ResumeLayout(false);
+            panelFormulario.PerformLayout();
+            panelLista.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.Panel           panelFormulario;

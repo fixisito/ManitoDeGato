@@ -12,169 +12,228 @@ namespace ManitoDeGato
 
         private void InitializeComponent()
         {
-            this.panelMenuLateral  = new System.Windows.Forms.Panel();
-            this.panelLogo         = new System.Windows.Forms.Panel();
-            this.lblLogo           = new System.Windows.Forms.Label();
-            this.btnServicios      = new System.Windows.Forms.Button();
-            this.btnEstilistas     = new System.Windows.Forms.Button();
-            this.btnAgendamientos  = new System.Windows.Forms.Button();
-            this.btnProductos      = new System.Windows.Forms.Button();
-            this.panelCabecera     = new System.Windows.Forms.Panel();
-            this.lblTituloPrincipal = new System.Windows.Forms.Label();
-            this.btnAlternarTema   = new System.Windows.Forms.Button();
-            this.panelEscritorio   = new System.Windows.Forms.Panel();
-            this.lblBienvenida     = new System.Windows.Forms.Label();
-
-            this.panelMenuLateral.SuspendLayout();
-            this.panelLogo.SuspendLayout();
-            this.panelCabecera.SuspendLayout();
-            this.panelEscritorio.SuspendLayout();
-            this.SuspendLayout();
-
-            this.panelMenuLateral.Controls.Add(this.btnProductos);
-            this.panelMenuLateral.Controls.Add(this.btnAgendamientos);
-            this.panelMenuLateral.Controls.Add(this.btnEstilistas);
-            this.panelMenuLateral.Controls.Add(this.btnServicios);
-            this.panelMenuLateral.Controls.Add(this.panelLogo);
-            this.panelMenuLateral.Dock     = System.Windows.Forms.DockStyle.Left;
-            this.panelMenuLateral.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuLateral.Name     = "panelMenuLateral";
-            this.panelMenuLateral.Size     = new System.Drawing.Size(220, 620);
-            this.panelMenuLateral.TabIndex = 0;
-
-            this.panelLogo.Controls.Add(this.lblLogo);
-            this.panelLogo.Dock     = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name     = "panelLogo";
-            this.panelLogo.Size     = new System.Drawing.Size(220, 85);
-            this.panelLogo.TabIndex = 0;
-
-            this.lblLogo.Dock      = System.Windows.Forms.DockStyle.Fill;
-            this.lblLogo.Font      = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblLogo.Location  = new System.Drawing.Point(0, 0);
-            this.lblLogo.Name      = "lblLogo";
-            this.lblLogo.Size      = new System.Drawing.Size(220, 85);
-            this.lblLogo.TabIndex  = 0;
-            this.lblLogo.Text      = "✂ MANITO DE GATO";
-            this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-            this.btnServicios.Dock                        = System.Windows.Forms.DockStyle.Top;
-            this.btnServicios.FlatAppearance.BorderSize   = 0;
-            this.btnServicios.FlatStyle                   = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServicios.Font                        = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnServicios.Location                    = new System.Drawing.Point(0, 85);
-            this.btnServicios.Name                        = "btnServicios";
-            this.btnServicios.Padding                     = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnServicios.Size                        = new System.Drawing.Size(220, 60);
-            this.btnServicios.TabIndex                    = 1;
-            this.btnServicios.Text                        = "🛎  Servicios";
-            this.btnServicios.TextAlign                   = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServicios.UseVisualStyleBackColor     = true;
-            this.btnServicios.Click                      += new System.EventHandler(this.btnServicios_Click);
-
-            this.btnEstilistas.Dock                       = System.Windows.Forms.DockStyle.Top;
-            this.btnEstilistas.FlatAppearance.BorderSize  = 0;
-            this.btnEstilistas.FlatStyle                  = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstilistas.Font                       = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEstilistas.Location                   = new System.Drawing.Point(0, 145);
-            this.btnEstilistas.Name                       = "btnEstilistas";
-            this.btnEstilistas.Padding                    = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnEstilistas.Size                       = new System.Drawing.Size(220, 60);
-            this.btnEstilistas.TabIndex                   = 2;
-            this.btnEstilistas.Text                       = "💇  Estilistas";
-            this.btnEstilistas.TextAlign                  = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstilistas.UseVisualStyleBackColor    = true;
-            this.btnEstilistas.Click                     += new System.EventHandler(this.btnEstilistas_Click);
-
-            this.btnAgendamientos.Dock                    = System.Windows.Forms.DockStyle.Top;
-            this.btnAgendamientos.FlatAppearance.BorderSize = 0;
-            this.btnAgendamientos.FlatStyle               = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgendamientos.Font                    = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgendamientos.Location                = new System.Drawing.Point(0, 205);
-            this.btnAgendamientos.Name                    = "btnAgendamientos";
-            this.btnAgendamientos.Padding                 = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnAgendamientos.Size                    = new System.Drawing.Size(220, 60);
-            this.btnAgendamientos.TabIndex                = 3;
-            this.btnAgendamientos.Text                    = "📅  Agendamientos";
-            this.btnAgendamientos.TextAlign               = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgendamientos.UseVisualStyleBackColor = true;
-            this.btnAgendamientos.Click                  += new System.EventHandler(this.btnAgendamientos_Click);
-
-            this.btnProductos.Dock                        = System.Windows.Forms.DockStyle.Top;
-            this.btnProductos.FlatAppearance.BorderSize   = 0;
-            this.btnProductos.FlatStyle                   = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font                        = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProductos.Location                    = new System.Drawing.Point(0, 265);
-            this.btnProductos.Name                        = "btnProductos";
-            this.btnProductos.Padding                     = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnProductos.Size                        = new System.Drawing.Size(220, 60);
-            this.btnProductos.TabIndex                    = 4;
-            this.btnProductos.Text                        = "📦  Productos";
-            this.btnProductos.TextAlign                   = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.UseVisualStyleBackColor     = true;
-            this.btnProductos.Click                      += new System.EventHandler(this.btnProductos_Click);
-
-            this.panelCabecera.Controls.Add(this.btnAlternarTema);
-            this.panelCabecera.Controls.Add(this.lblTituloPrincipal);
-            this.panelCabecera.Dock     = System.Windows.Forms.DockStyle.Top;
-            this.panelCabecera.Location = new System.Drawing.Point(220, 0);
-            this.panelCabecera.Name     = "panelCabecera";
-            this.panelCabecera.Size     = new System.Drawing.Size(830, 85);
-            this.panelCabecera.TabIndex = 1;
-
-            this.lblTituloPrincipal.Anchor    = System.Windows.Forms.AnchorStyles.None;
-            this.lblTituloPrincipal.AutoSize  = true;
-            this.lblTituloPrincipal.Font      = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTituloPrincipal.Location  = new System.Drawing.Point(360, 30);
-            this.lblTituloPrincipal.Name      = "lblTituloPrincipal";
-            this.lblTituloPrincipal.TabIndex  = 0;
-            this.lblTituloPrincipal.Text      = "INICIO";
-
-            this.btnAlternarTema.Anchor                      = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            this.btnAlternarTema.FlatAppearance.BorderSize   = 0;
-            this.btnAlternarTema.FlatStyle                   = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlternarTema.Font                        = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAlternarTema.Location                    = new System.Drawing.Point(655, 22);
-            this.btnAlternarTema.Name                        = "btnAlternarTema";
-            this.btnAlternarTema.Size                        = new System.Drawing.Size(155, 40);
-            this.btnAlternarTema.TabIndex                    = 1;
-            this.btnAlternarTema.Text                        = "Modo Oscuro";
-            this.btnAlternarTema.UseVisualStyleBackColor     = true;
-            this.btnAlternarTema.Click                      += new System.EventHandler(this.btnAlternarTema_Click);
-
-            this.panelEscritorio.Controls.Add(this.lblBienvenida);
-            this.panelEscritorio.Dock     = System.Windows.Forms.DockStyle.Fill;
-            this.panelEscritorio.Location = new System.Drawing.Point(220, 85);
-            this.panelEscritorio.Name     = "panelEscritorio";
-            this.panelEscritorio.Size     = new System.Drawing.Size(830, 535);
-            this.panelEscritorio.TabIndex = 2;
-
-            this.lblBienvenida.Dock      = System.Windows.Forms.DockStyle.Fill;
-            this.lblBienvenida.Font      = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblBienvenida.Location  = new System.Drawing.Point(0, 0);
-            this.lblBienvenida.Name      = "lblBienvenida";
-            this.lblBienvenida.Size      = new System.Drawing.Size(830, 535);
-            this.lblBienvenida.TabIndex  = 0;
-            this.lblBienvenida.Text      = "Bienvenido a Manito de Gato 🌸";
-            this.lblBienvenida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize          = new System.Drawing.Size(1050, 620);
-            this.Controls.Add(this.panelEscritorio);
-            this.Controls.Add(this.panelCabecera);
-            this.Controls.Add(this.panelMenuLateral);
-            this.MinimumSize         = new System.Drawing.Size(900, 500);
-            this.Name                = "FormPrincipal";
-            this.StartPosition       = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text                = "Manito de Gato — Salón de Belleza & Spa";
-
-            this.panelMenuLateral.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
-            this.panelCabecera.ResumeLayout(false);
-            this.panelCabecera.PerformLayout();
-            this.panelEscritorio.ResumeLayout(false);
-            this.ResumeLayout(false);
+            panelMenuLateral = new Panel();
+            btnProductos = new Button();
+            btnAgendamientos = new Button();
+            btnEstilistas = new Button();
+            btnServicios = new Button();
+            panelLogo = new Panel();
+            lblLogo = new Label();
+            panelCabecera = new Panel();
+            btnCerrarSesion = new Button();
+            btnAlternarTema = new Button();
+            lblTituloPrincipal = new Label();
+            panelEscritorio = new Panel();
+            lblBienvenida = new Label();
+            btnSalir = new Button();
+            panelMenuLateral.SuspendLayout();
+            panelLogo.SuspendLayout();
+            panelCabecera.SuspendLayout();
+            panelEscritorio.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panelMenuLateral
+            // 
+            panelMenuLateral.Controls.Add(btnProductos);
+            panelMenuLateral.Controls.Add(btnAgendamientos);
+            panelMenuLateral.Controls.Add(btnEstilistas);
+            panelMenuLateral.Controls.Add(btnServicios);
+            panelMenuLateral.Controls.Add(panelLogo);
+            panelMenuLateral.Dock = DockStyle.Left;
+            panelMenuLateral.Location = new Point(0, 0);
+            panelMenuLateral.Margin = new Padding(3, 4, 3, 4);
+            panelMenuLateral.Name = "panelMenuLateral";
+            panelMenuLateral.Size = new Size(251, 827);
+            panelMenuLateral.TabIndex = 0;
+            // 
+            // btnProductos
+            // 
+            btnProductos.Dock = DockStyle.Top;
+            btnProductos.FlatAppearance.BorderSize = 0;
+            btnProductos.FlatStyle = FlatStyle.Flat;
+            btnProductos.Font = new Font("Segoe UI", 10F);
+            btnProductos.Location = new Point(0, 353);
+            btnProductos.Margin = new Padding(3, 4, 3, 4);
+            btnProductos.Name = "btnProductos";
+            btnProductos.Padding = new Padding(23, 0, 0, 0);
+            btnProductos.Size = new Size(251, 80);
+            btnProductos.TabIndex = 4;
+            btnProductos.Text = "📦  Productos";
+            btnProductos.TextAlign = ContentAlignment.MiddleLeft;
+            btnProductos.UseVisualStyleBackColor = true;
+            btnProductos.Click += btnProductos_Click;
+            // 
+            // btnAgendamientos
+            // 
+            btnAgendamientos.Dock = DockStyle.Top;
+            btnAgendamientos.FlatAppearance.BorderSize = 0;
+            btnAgendamientos.FlatStyle = FlatStyle.Flat;
+            btnAgendamientos.Font = new Font("Segoe UI", 10F);
+            btnAgendamientos.Location = new Point(0, 273);
+            btnAgendamientos.Margin = new Padding(3, 4, 3, 4);
+            btnAgendamientos.Name = "btnAgendamientos";
+            btnAgendamientos.Padding = new Padding(23, 0, 0, 0);
+            btnAgendamientos.Size = new Size(251, 80);
+            btnAgendamientos.TabIndex = 3;
+            btnAgendamientos.Text = "📅  Agendamientos";
+            btnAgendamientos.TextAlign = ContentAlignment.MiddleLeft;
+            btnAgendamientos.UseVisualStyleBackColor = true;
+            btnAgendamientos.Click += btnAgendamientos_Click;
+            // 
+            // btnEstilistas
+            // 
+            btnEstilistas.Dock = DockStyle.Top;
+            btnEstilistas.FlatAppearance.BorderSize = 0;
+            btnEstilistas.FlatStyle = FlatStyle.Flat;
+            btnEstilistas.Font = new Font("Segoe UI", 10F);
+            btnEstilistas.Location = new Point(0, 193);
+            btnEstilistas.Margin = new Padding(3, 4, 3, 4);
+            btnEstilistas.Name = "btnEstilistas";
+            btnEstilistas.Padding = new Padding(23, 0, 0, 0);
+            btnEstilistas.Size = new Size(251, 80);
+            btnEstilistas.TabIndex = 2;
+            btnEstilistas.Text = "💇  Estilistas";
+            btnEstilistas.TextAlign = ContentAlignment.MiddleLeft;
+            btnEstilistas.UseVisualStyleBackColor = true;
+            btnEstilistas.Click += btnEstilistas_Click;
+            // 
+            // btnServicios
+            // 
+            btnServicios.Dock = DockStyle.Top;
+            btnServicios.FlatAppearance.BorderSize = 0;
+            btnServicios.FlatStyle = FlatStyle.Flat;
+            btnServicios.Font = new Font("Segoe UI", 10F);
+            btnServicios.Location = new Point(0, 113);
+            btnServicios.Margin = new Padding(3, 4, 3, 4);
+            btnServicios.Name = "btnServicios";
+            btnServicios.Padding = new Padding(23, 0, 0, 0);
+            btnServicios.Size = new Size(251, 80);
+            btnServicios.TabIndex = 1;
+            btnServicios.Text = "🛎  Servicios";
+            btnServicios.TextAlign = ContentAlignment.MiddleLeft;
+            btnServicios.UseVisualStyleBackColor = true;
+            btnServicios.Click += btnServicios_Click;
+            // 
+            // panelLogo
+            // 
+            panelLogo.Controls.Add(lblLogo);
+            panelLogo.Dock = DockStyle.Top;
+            panelLogo.Location = new Point(0, 0);
+            panelLogo.Margin = new Padding(3, 4, 3, 4);
+            panelLogo.Name = "panelLogo";
+            panelLogo.Size = new Size(251, 113);
+            panelLogo.TabIndex = 0;
+            // 
+            // lblLogo
+            // 
+            lblLogo.Dock = DockStyle.Fill;
+            lblLogo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblLogo.Location = new Point(0, 0);
+            lblLogo.Name = "lblLogo";
+            lblLogo.Size = new Size(251, 113);
+            lblLogo.TabIndex = 0;
+            lblLogo.Text = "✂ MANITO DE GATO";
+            lblLogo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelCabecera
+            // 
+            panelCabecera.Controls.Add(btnSalir);
+            panelCabecera.Controls.Add(btnCerrarSesion);
+            panelCabecera.Controls.Add(btnAlternarTema);
+            panelCabecera.Controls.Add(lblTituloPrincipal);
+            panelCabecera.Dock = DockStyle.Top;
+            panelCabecera.Location = new Point(251, 0);
+            panelCabecera.Margin = new Padding(3, 4, 3, 4);
+            panelCabecera.Name = "panelCabecera";
+            panelCabecera.Size = new Size(949, 113);
+            panelCabecera.TabIndex = 1;
+            // 
+            // btnCerrarSesion
+            // 
+            btnCerrarSesion.Location = new Point(6, 12);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(106, 42);
+            btnCerrarSesion.TabIndex = 2;
+            btnCerrarSesion.Text = "Cerrar sesión";
+            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
+            // 
+            // btnAlternarTema
+            // 
+            btnAlternarTema.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAlternarTema.FlatAppearance.BorderSize = 0;
+            btnAlternarTema.FlatStyle = FlatStyle.Flat;
+            btnAlternarTema.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnAlternarTema.Location = new Point(749, 29);
+            btnAlternarTema.Margin = new Padding(3, 4, 3, 4);
+            btnAlternarTema.Name = "btnAlternarTema";
+            btnAlternarTema.Size = new Size(177, 53);
+            btnAlternarTema.TabIndex = 1;
+            btnAlternarTema.Text = "Modo Oscuro";
+            btnAlternarTema.UseVisualStyleBackColor = true;
+            btnAlternarTema.Click += btnAlternarTema_Click;
+            // 
+            // lblTituloPrincipal
+            // 
+            lblTituloPrincipal.Anchor = AnchorStyles.None;
+            lblTituloPrincipal.AutoSize = true;
+            lblTituloPrincipal.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblTituloPrincipal.Location = new Point(411, 40);
+            lblTituloPrincipal.Name = "lblTituloPrincipal";
+            lblTituloPrincipal.Size = new Size(90, 32);
+            lblTituloPrincipal.TabIndex = 0;
+            lblTituloPrincipal.Text = "INICIO";
+            // 
+            // panelEscritorio
+            // 
+            panelEscritorio.Controls.Add(lblBienvenida);
+            panelEscritorio.Dock = DockStyle.Fill;
+            panelEscritorio.Location = new Point(251, 113);
+            panelEscritorio.Margin = new Padding(3, 4, 3, 4);
+            panelEscritorio.Name = "panelEscritorio";
+            panelEscritorio.Size = new Size(949, 714);
+            panelEscritorio.TabIndex = 2;
+            // 
+            // lblBienvenida
+            // 
+            lblBienvenida.Dock = DockStyle.Fill;
+            lblBienvenida.Font = new Font("Segoe UI", 22F);
+            lblBienvenida.Location = new Point(0, 0);
+            lblBienvenida.Name = "lblBienvenida";
+            lblBienvenida.Size = new Size(949, 714);
+            lblBienvenida.TabIndex = 0;
+            lblBienvenida.Text = "Bienvenido a Manito de Gato 🌸";
+            lblBienvenida.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(6, 71);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(106, 35);
+            btnSalir.TabIndex = 3;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // FormPrincipal
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1200, 827);
+            Controls.Add(panelEscritorio);
+            Controls.Add(panelCabecera);
+            Controls.Add(panelMenuLateral);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1026, 651);
+            Name = "FormPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Manito de Gato — Salón de Belleza & Spa";
+            panelMenuLateral.ResumeLayout(false);
+            panelLogo.ResumeLayout(false);
+            panelCabecera.ResumeLayout(false);
+            panelCabecera.PerformLayout();
+            panelEscritorio.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         private System.Windows.Forms.Panel  panelMenuLateral;
@@ -189,5 +248,7 @@ namespace ManitoDeGato
         private System.Windows.Forms.Button btnAlternarTema;
         private System.Windows.Forms.Panel  panelEscritorio;
         private System.Windows.Forms.Label  lblBienvenida;
+        private Button btnCerrarSesion;
+        private Button btnSalir;
     }
 }
