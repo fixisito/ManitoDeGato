@@ -1,157 +1,169 @@
-﻿namespace ManitoDeGato
+namespace ManitoDeGato
 {
     partial class FormLogin
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+            if (disposing && (components != null)) components.Dispose();
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            lblNombre = new Label();
-            lblContrasena = new Label();
-            txtNombre = new TextBox();
-            txtContrasena = new TextBox();
-            btnIniciar = new Button();
-            lblTitulo = new Label();
-            btnSalir = new Button();
-            chkMostrar = new CheckBox();
+            panelFondo      = new System.Windows.Forms.Panel();
+            panelCard       = new System.Windows.Forms.Panel();
+            lblTitulo       = new System.Windows.Forms.Label();
+            lblSubtitulo    = new System.Windows.Forms.Label();
+            lblNombre       = new System.Windows.Forms.Label();
+            txtNombre       = new System.Windows.Forms.TextBox();
+            lblContrasena   = new System.Windows.Forms.Label();
+            txtContrasena   = new System.Windows.Forms.TextBox();
+            chkMostrar      = new System.Windows.Forms.CheckBox();
+            btnIniciar      = new System.Windows.Forms.Button();
+            btnSalir        = new System.Windows.Forms.Button();
+
+            panelFondo.SuspendLayout();
+            panelCard.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(317, 100);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 25);
-            label1.TabIndex = 0;
-            // 
-            // lblNombre
-            // 
-            lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(213, 178);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(67, 20);
-            lblNombre.TabIndex = 1;
-            lblNombre.Text = "Nombre:";
-            // 
-            // lblContrasena
-            // 
-            lblContrasena.AutoSize = true;
-            lblContrasena.Location = new Point(213, 241);
-            lblContrasena.Name = "lblContrasena";
-            lblContrasena.Size = new Size(86, 20);
-            lblContrasena.TabIndex = 2;
-            lblContrasena.Text = "Contraseña:";
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(317, 171);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(125, 27);
-            txtNombre.TabIndex = 3;
-            // 
-            // txtContrasena
-            // 
-            txtContrasena.Location = new Point(317, 234);
-            txtContrasena.Name = "txtContrasena";
-            txtContrasena.Size = new Size(125, 27);
-            txtContrasena.TabIndex = 4;
-            txtContrasena.UseSystemPasswordChar = true;
-            // 
-            // btnIniciar
-            // 
-            btnIniciar.Location = new Point(205, 356);
-            btnIniciar.Name = "btnIniciar";
-            btnIniciar.Size = new Size(94, 29);
-            btnIniciar.TabIndex = 5;
-            btnIniciar.Text = "Iniciar";
-            btnIniciar.UseVisualStyleBackColor = true;
-            btnIniciar.Click += btnIniciar_Click;
-            // 
+
+            // panelFondo — ocupa todo el formulario
+            panelFondo.Dock     = System.Windows.Forms.DockStyle.Fill;
+            panelFondo.Name     = "panelFondo";
+            panelFondo.TabIndex = 0;
+            panelFondo.Controls.Add(panelCard);
+
+            // panelCard — tarjeta central
+            panelCard.Size      = new System.Drawing.Size(380, 370);
+            panelCard.Name      = "panelCard";
+            panelCard.TabIndex  = 0;
+            panelCard.Controls.Add(lblTitulo);
+            panelCard.Controls.Add(lblSubtitulo);
+            panelCard.Controls.Add(lblNombre);
+            panelCard.Controls.Add(txtNombre);
+            panelCard.Controls.Add(lblContrasena);
+            panelCard.Controls.Add(txtContrasena);
+            panelCard.Controls.Add(chkMostrar);
+            panelCard.Controls.Add(btnIniciar);
+            panelCard.Controls.Add(btnSalir);
+
             // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(285, 72);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(177, 28);
-            lblTitulo.TabIndex = 6;
-            lblTitulo.Text = "Inicio de sesión 🐱";
-            // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(448, 356);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(94, 29);
-            btnSalir.TabIndex = 7;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
-            // 
+            lblTitulo.AutoSize  = false;
+            lblTitulo.Font      = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            lblTitulo.Location  = new System.Drawing.Point(0, 28);
+            lblTitulo.Name      = "lblTitulo";
+            lblTitulo.Size      = new System.Drawing.Size(380, 40);
+            lblTitulo.TabIndex  = 0;
+            lblTitulo.Text      = "Manito de Gato";
+            lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+            // lblSubtitulo
+            lblSubtitulo.AutoSize  = false;
+            lblSubtitulo.Font      = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
+            lblSubtitulo.Location  = new System.Drawing.Point(0, 70);
+            lblSubtitulo.Name      = "lblSubtitulo";
+            lblSubtitulo.Size      = new System.Drawing.Size(380, 22);
+            lblSubtitulo.TabIndex  = 1;
+            lblSubtitulo.Text      = "Inicio de sesión";
+            lblSubtitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+            // lblNombre
+            lblNombre.AutoSize = true;
+            lblNombre.Font     = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            lblNombre.Location = new System.Drawing.Point(40, 112);
+            lblNombre.Name     = "lblNombre";
+            lblNombre.TabIndex = 2;
+            lblNombre.Text     = "USUARIO";
+
+            // txtNombre
+            txtNombre.Font      = new System.Drawing.Font("Segoe UI", 11F);
+            txtNombre.Location  = new System.Drawing.Point(40, 133);
+            txtNombre.Name      = "txtNombre";
+            txtNombre.Size      = new System.Drawing.Size(300, 28);
+            txtNombre.TabIndex  = 3;
+            txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            // lblContrasena
+            lblContrasena.AutoSize = true;
+            lblContrasena.Font     = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            lblContrasena.Location = new System.Drawing.Point(40, 178);
+            lblContrasena.Name     = "lblContrasena";
+            lblContrasena.TabIndex = 4;
+            lblContrasena.Text     = "CONTRASENA";
+
+            // txtContrasena
+            txtContrasena.Font                 = new System.Drawing.Font("Segoe UI", 11F);
+            txtContrasena.Location             = new System.Drawing.Point(40, 199);
+            txtContrasena.Name                 = "txtContrasena";
+            txtContrasena.Size                 = new System.Drawing.Size(300, 28);
+            txtContrasena.TabIndex             = 5;
+            txtContrasena.UseSystemPasswordChar = true;
+            txtContrasena.BorderStyle          = System.Windows.Forms.BorderStyle.FixedSingle;
+
             // chkMostrar
-            // 
             chkMostrar.AutoSize = true;
-            chkMostrar.Location = new Point(468, 237);
-            chkMostrar.Name = "chkMostrar";
-            chkMostrar.Size = new Size(158, 24);
-            chkMostrar.TabIndex = 8;
-            chkMostrar.Text = "Mostrar contraseña";
+            chkMostrar.Font     = new System.Drawing.Font("Segoe UI", 8.5F);
+            chkMostrar.Location = new System.Drawing.Point(40, 235);
+            chkMostrar.Name     = "chkMostrar";
+            chkMostrar.Size     = new System.Drawing.Size(148, 20);
+            chkMostrar.TabIndex = 6;
+            chkMostrar.Text     = "Mostrar contrasena";
             chkMostrar.UseVisualStyleBackColor = true;
-            chkMostrar.CheckedChanged += chkMostrar_CheckedChanged;
-            // 
+            chkMostrar.CheckedChanged += new System.EventHandler(this.chkMostrar_CheckedChanged);
+
+            // btnIniciar
+            btnIniciar.FlatAppearance.BorderSize = 0;
+            btnIniciar.FlatStyle                 = System.Windows.Forms.FlatStyle.Flat;
+            btnIniciar.Font                      = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            btnIniciar.Location                  = new System.Drawing.Point(40, 280);
+            btnIniciar.Name                      = "btnIniciar";
+            btnIniciar.Size                      = new System.Drawing.Size(300, 42);
+            btnIniciar.TabIndex                  = 7;
+            btnIniciar.Text                      = "Iniciar Sesion";
+            btnIniciar.Cursor                    = System.Windows.Forms.Cursors.Hand;
+            btnIniciar.Click                    += new System.EventHandler(this.btnIniciar_Click);
+
+            // btnSalir
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle                 = System.Windows.Forms.FlatStyle.Flat;
+            btnSalir.Font                      = new System.Drawing.Font("Segoe UI", 9F);
+            btnSalir.Location                  = new System.Drawing.Point(140, 330);
+            btnSalir.Name                      = "btnSalir";
+            btnSalir.Size                      = new System.Drawing.Size(100, 26);
+            btnSalir.TabIndex                  = 8;
+            btnSalir.Text                      = "Salir";
+            btnSalir.Cursor                    = System.Windows.Forms.Cursors.Hand;
+            btnSalir.Click                    += new System.EventHandler(this.btnSalir_Click);
+
             // FormLogin
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(chkMostrar);
-            Controls.Add(btnSalir);
-            Controls.Add(lblTitulo);
-            Controls.Add(btnIniciar);
-            Controls.Add(txtContrasena);
-            Controls.Add(txtNombre);
-            Controls.Add(lblContrasena);
-            Controls.Add(lblNombre);
-            Controls.Add(label1);
-            Name = "FormLogin";
-            Text = "Form1";
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize          = new System.Drawing.Size(520, 440);
+            Controls.Add(panelFondo);
+            Name            = "FormLogin";
+            Text            = "ManitoDeGato — Inicio de Sesion";
+            StartPosition   = System.Windows.Forms.FormStartPosition.CenterScreen;
+
+            panelCard.SuspendLayout();
+            panelFondo.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label lblNombre;
-        private Label lblContrasena;
-        private TextBox txtNombre;
-        private TextBox txtContrasena;
-        private Button btnIniciar;
-        private Label lblTitulo;
-        private Button btnSalir;
-        private CheckBox chkMostrar;
+        private System.Windows.Forms.Panel    panelFondo;
+        private System.Windows.Forms.Panel    panelCard;
+        private System.Windows.Forms.Label    lblTitulo;
+        private System.Windows.Forms.Label    lblSubtitulo;
+        private System.Windows.Forms.Label    lblNombre;
+        private System.Windows.Forms.TextBox  txtNombre;
+        private System.Windows.Forms.Label    lblContrasena;
+        private System.Windows.Forms.TextBox  txtContrasena;
+        private System.Windows.Forms.CheckBox chkMostrar;
+        private System.Windows.Forms.Button   btnIniciar;
+        private System.Windows.Forms.Button   btnSalir;
     }
 }

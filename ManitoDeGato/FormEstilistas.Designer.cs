@@ -19,7 +19,7 @@ namespace ManitoDeGato
             this.lblRut           = new System.Windows.Forms.Label();
             this.txtRut           = new System.Windows.Forms.TextBox();
             this.lblEspecialidad  = new System.Windows.Forms.Label();
-            this.txtEspecialidad  = new System.Windows.Forms.TextBox();
+            this.cmbEspecialidad  = new System.Windows.Forms.ComboBox();
             this.lblTelefono      = new System.Windows.Forms.Label();
             this.txtTelefono      = new System.Windows.Forms.TextBox();
             this.btnAgregar       = new System.Windows.Forms.Button();
@@ -37,7 +37,7 @@ namespace ManitoDeGato
             this.panelFormulario.Controls.Add(this.btnAgregar);
             this.panelFormulario.Controls.Add(this.txtTelefono);
             this.panelFormulario.Controls.Add(this.lblTelefono);
-            this.panelFormulario.Controls.Add(this.txtEspecialidad);
+            this.panelFormulario.Controls.Add(this.cmbEspecialidad);
             this.panelFormulario.Controls.Add(this.lblEspecialidad);
             this.panelFormulario.Controls.Add(this.txtRut);
             this.panelFormulario.Controls.Add(this.lblRut);
@@ -91,11 +91,22 @@ namespace ManitoDeGato
             this.lblEspecialidad.TabIndex = 5;
             this.lblEspecialidad.Text     = "Especialidad:";
 
-            this.txtEspecialidad.Font     = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtEspecialidad.Location = new System.Drawing.Point(15, 212);
-            this.txtEspecialidad.Name     = "txtEspecialidad";
-            this.txtEspecialidad.Size     = new System.Drawing.Size(258, 25);
-            this.txtEspecialidad.TabIndex = 6;
+            this.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEspecialidad.Font          = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbEspecialidad.Location      = new System.Drawing.Point(15, 212);
+            this.cmbEspecialidad.Name          = "cmbEspecialidad";
+            this.cmbEspecialidad.Size          = new System.Drawing.Size(258, 26);
+            this.cmbEspecialidad.TabIndex      = 6;
+            this.cmbEspecialidad.Items.AddRange(new string[] {
+                "Colorista",
+                "Estilista General",
+                "Especialista en Unas",
+                "Maquilladora",
+                "Barberia",
+                "Tratamientos Capilares",
+                "Depilacion",
+                "Cejas y Pestanas"
+            });
 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font     = new System.Drawing.Font("Segoe UI", 9.5F);
@@ -179,7 +190,7 @@ namespace ManitoDeGato
         private System.Windows.Forms.Label    lblRut;
         private System.Windows.Forms.TextBox  txtRut;
         private System.Windows.Forms.Label    lblEspecialidad;
-        private System.Windows.Forms.TextBox  txtEspecialidad;
+        private System.Windows.Forms.ComboBox cmbEspecialidad;
         private System.Windows.Forms.Label    lblTelefono;
         private System.Windows.Forms.TextBox  txtTelefono;
         private System.Windows.Forms.Button   btnAgregar;

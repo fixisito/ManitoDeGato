@@ -17,7 +17,7 @@ namespace ManitoDeGato
             this.lblNombre       = new System.Windows.Forms.Label();
             this.txtNombre       = new System.Windows.Forms.TextBox();
             this.lblCategoria    = new System.Windows.Forms.Label();
-            this.txtCategoria    = new System.Windows.Forms.TextBox();
+            this.cmbCategoria    = new System.Windows.Forms.ComboBox();
             this.lblStock        = new System.Windows.Forms.Label();
             this.txtStock        = new System.Windows.Forms.TextBox();
             this.lblPrecio       = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@ namespace ManitoDeGato
             this.panelFormulario.Controls.Add(this.lblPrecio);
             this.panelFormulario.Controls.Add(this.txtStock);
             this.panelFormulario.Controls.Add(this.lblStock);
-            this.panelFormulario.Controls.Add(this.txtCategoria);
+            this.panelFormulario.Controls.Add(this.cmbCategoria);
             this.panelFormulario.Controls.Add(this.lblCategoria);
             this.panelFormulario.Controls.Add(this.txtNombre);
             this.panelFormulario.Controls.Add(this.lblNombre);
@@ -80,11 +80,24 @@ namespace ManitoDeGato
             this.lblCategoria.TabIndex = 3;
             this.lblCategoria.Text     = "Categoría:";
 
-            this.txtCategoria.Font     = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtCategoria.Location = new System.Drawing.Point(15, 150);
-            this.txtCategoria.Name     = "txtCategoria";
-            this.txtCategoria.Size     = new System.Drawing.Size(258, 25);
-            this.txtCategoria.TabIndex = 4;
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.Font          = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbCategoria.Location      = new System.Drawing.Point(15, 150);
+            this.cmbCategoria.Name          = "cmbCategoria";
+            this.cmbCategoria.Size          = new System.Drawing.Size(258, 26);
+            this.cmbCategoria.TabIndex      = 4;
+            this.cmbCategoria.Items.AddRange(new string[] {
+                "Shampoo y Acondicionador",
+                "Tintes y Coloracion",
+                "Tratamiento Capilar",
+                "Herramientas y Equipos",
+                "Esmaltes y Unas",
+                "Maquillaje",
+                "Cremas y Mascaras",
+                "Aceites y Serums",
+                "Depilacion",
+                "Accesorios"
+            });
 
             this.lblStock.AutoSize = true;
             this.lblStock.Font     = new System.Drawing.Font("Segoe UI", 9.5F);
@@ -188,7 +201,7 @@ namespace ManitoDeGato
         private System.Windows.Forms.Label    lblNombre;
         private System.Windows.Forms.TextBox  txtNombre;
         private System.Windows.Forms.Label    lblCategoria;
-        private System.Windows.Forms.TextBox  txtCategoria;
+        private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label    lblStock;
         private System.Windows.Forms.TextBox  txtStock;
         private System.Windows.Forms.Label    lblPrecio;

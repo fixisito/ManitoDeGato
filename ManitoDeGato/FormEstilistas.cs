@@ -44,7 +44,7 @@ namespace ManitoDeGato
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtRut.Text) ||
-                string.IsNullOrWhiteSpace(txtEspecialidad.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text))
+                cmbEspecialidad.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txtTelefono.Text))
             {
                 MessageBox.Show("Por favor completa todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -60,7 +60,7 @@ namespace ManitoDeGato
             {
                 Nombre       = txtNombre.Text.Trim(),
                 Rut          = txtRut.Text.Trim(),
-                Especialidad = txtEspecialidad.Text.Trim(),
+                Especialidad = cmbEspecialidad.SelectedItem!.ToString()!,
                 Telefono     = txtTelefono.Text.Trim()
             });
             LimpiarCampos();
@@ -92,7 +92,7 @@ namespace ManitoDeGato
             }
 
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtRut.Text) ||
-                string.IsNullOrWhiteSpace(txtEspecialidad.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text))
+                cmbEspecialidad.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txtTelefono.Text))
             {
                 MessageBox.Show("Por favor completa todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -111,7 +111,7 @@ namespace ManitoDeGato
                 Id           = idSeleccionado,
                 Nombre       = txtNombre.Text.Trim(),
                 Rut          = txtRut.Text.Trim(),
-                Especialidad = txtEspecialidad.Text.Trim(),
+                Especialidad = cmbEspecialidad.SelectedItem!.ToString()!,
                 Telefono     = txtTelefono.Text.Trim()
             });
             MessageBox.Show("Estilista modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -127,10 +127,10 @@ namespace ManitoDeGato
                 idSeleccionado = int.Parse(listEstilistas.SelectedItems[0].SubItems[0].Text);
                 var estilista  = repositorio.ObtenerPorId(idSeleccionado);
                 if (estilista == null) return;
-                txtNombre.Text       = estilista.Nombre;
-                txtRut.Text          = estilista.Rut;
-                txtEspecialidad.Text = estilista.Especialidad;
-                txtTelefono.Text     = estilista.Telefono;
+                txtNombre.Text             = estilista.Nombre;
+                txtRut.Text                = estilista.Rut;
+                cmbEspecialidad.SelectedItem = estilista.Especialidad;
+                txtTelefono.Text           = estilista.Telefono;
             }
         }
 
@@ -138,7 +138,7 @@ namespace ManitoDeGato
         {
             txtNombre.Clear();
             txtRut.Clear();
-            txtEspecialidad.Clear();
+            cmbEspecialidad.SelectedIndex = -1;
             txtTelefono.Clear();
         }
 
@@ -150,10 +150,10 @@ namespace ManitoDeGato
                 btnModificar.Visible = false;
                 btnEliminar.Visible = false;
 
-                txtNombre.Enabled = false;
-                txtRut.Enabled = false;
-                txtEspecialidad.Enabled = false;
-                txtTelefono.Enabled = false;
+                txtNombre.Enabled           = false;
+                txtRut.Enabled              = false;
+                cmbEspecialidad.Enabled     = false;
+                txtTelefono.Enabled         = false;
             }
         }
 

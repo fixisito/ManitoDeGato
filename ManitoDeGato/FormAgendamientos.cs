@@ -78,13 +78,15 @@ namespace ManitoDeGato
                 return;
             }
 
+            var fechaHora = dtpFecha.Value.Date + dtpHora.Value.TimeOfDay;
+
             repositorioAgendamientos.Agregar(new Agendamiento
             {
                 NombreCliente = txtNombreCliente.Text.Trim(),
-                RutEstilista = txtRutEstilista.Text.Trim(),
-                IdServicio = idServicio,
-                Fecha = dtpFecha.Value,
-                Estado = cmbEstado.SelectedItem?.ToString() ?? "Pendiente"
+                RutEstilista  = txtRutEstilista.Text.Trim(),
+                IdServicio    = idServicio,
+                Fecha         = fechaHora,
+                Estado        = cmbEstado.SelectedItem?.ToString() ?? "Pendiente"
             });
             LimpiarCampos();
             CargarDatos();
@@ -133,14 +135,16 @@ namespace ManitoDeGato
                 return;
             }
 
+            var fechaHora = dtpFecha.Value.Date + dtpHora.Value.TimeOfDay;
+
             repositorioAgendamientos.Modificar(new Agendamiento
             {
-                Id = idSeleccionado,
+                Id            = idSeleccionado,
                 NombreCliente = txtNombreCliente.Text.Trim(),
-                RutEstilista = txtRutEstilista.Text.Trim(),
-                IdServicio = idServicio,
-                Fecha = dtpFecha.Value,
-                Estado = cmbEstado.SelectedItem?.ToString() ?? "Pendiente"
+                RutEstilista  = txtRutEstilista.Text.Trim(),
+                IdServicio    = idServicio,
+                Fecha         = fechaHora,
+                Estado        = cmbEstado.SelectedItem?.ToString() ?? "Pendiente"
             });
             MessageBox.Show("Agendamiento modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             idSeleccionado = -1;
@@ -155,10 +159,11 @@ namespace ManitoDeGato
                 idSeleccionado = int.Parse(listAgendamientos.SelectedItems[0].SubItems[0].Text);
                 var agendamiento = repositorioAgendamientos.ObtenerPorId(idSeleccionado);
                 if (agendamiento == null) return;
-                txtNombreCliente.Text = agendamiento.NombreCliente;
-                txtRutEstilista.Text = agendamiento.RutEstilista;
-                txtIdServicio.Text = agendamiento.IdServicio.ToString();
-                dtpFecha.Value = agendamiento.Fecha;
+                txtNombreCliente.Text  = agendamiento.NombreCliente;
+                txtRutEstilista.Text   = agendamiento.RutEstilista;
+                txtIdServicio.Text     = agendamiento.IdServicio.ToString();
+                dtpFecha.Value         = agendamiento.Fecha.Date;
+                dtpHora.Value          = DateTime.Today.Add(agendamiento.Fecha.TimeOfDay);
                 cmbEstado.SelectedItem = agendamiento.Estado;
             }
         }
@@ -168,7 +173,8 @@ namespace ManitoDeGato
             txtNombreCliente.Clear();
             txtRutEstilista.Clear();
             txtIdServicio.Clear();
-            dtpFecha.Value = DateTime.Now;
+            dtpFecha.Value          = DateTime.Now.Date;
+            dtpHora.Value           = DateTime.Today;
             cmbEstado.SelectedIndex = 0;
         }
 

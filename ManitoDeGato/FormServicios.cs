@@ -43,7 +43,7 @@ namespace ManitoDeGato
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtCategoria.Text) ||
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || cmbCategoria.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(txtPrecio.Text) || string.IsNullOrWhiteSpace(txtDuracion.Text))
             {
                 MessageBox.Show("Por favor completa todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -62,7 +62,7 @@ namespace ManitoDeGato
                 return;
             }
 
-            repositorio.Agregar(new Servicio { Nombre = txtNombre.Text.Trim(), Categoria = txtCategoria.Text.Trim(), Precio = precio, DuracionMinutos = duracion });
+            repositorio.Agregar(new Servicio { Nombre = txtNombre.Text.Trim(), Categoria = cmbCategoria.SelectedItem!.ToString()!, Precio = precio, DuracionMinutos = duracion });
             LimpiarCampos();
             CargarDatos();
         }
@@ -91,7 +91,7 @@ namespace ManitoDeGato
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtCategoria.Text) ||
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || cmbCategoria.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(txtPrecio.Text) || string.IsNullOrWhiteSpace(txtDuracion.Text))
             {
                 MessageBox.Show("Por favor completa todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -110,7 +110,7 @@ namespace ManitoDeGato
                 return;
             }
 
-            repositorio.Modificar(new Servicio { Id = idSeleccionado, Nombre = txtNombre.Text.Trim(), Categoria = txtCategoria.Text.Trim(), Precio = precio, DuracionMinutos = duracion });
+            repositorio.Modificar(new Servicio { Id = idSeleccionado, Nombre = txtNombre.Text.Trim(), Categoria = cmbCategoria.SelectedItem!.ToString()!, Precio = precio, DuracionMinutos = duracion });
             MessageBox.Show("Servicio modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             idSeleccionado = -1;
             LimpiarCampos();
@@ -124,17 +124,17 @@ namespace ManitoDeGato
                 idSeleccionado = int.Parse(listServicios.SelectedItems[0].SubItems[0].Text);
                 var servicio   = repositorio.ObtenerPorId(idSeleccionado);
                 if (servicio == null) return;
-                txtNombre.Text   = servicio.Nombre;
-                txtCategoria.Text = servicio.Categoria;
-                txtPrecio.Text   = servicio.Precio.ToString();
-                txtDuracion.Text = servicio.DuracionMinutos.ToString();
+                txtNombre.Text              = servicio.Nombre;
+                cmbCategoria.SelectedItem   = servicio.Categoria;
+                txtPrecio.Text              = servicio.Precio.ToString();
+                txtDuracion.Text            = servicio.DuracionMinutos.ToString();
             }
         }
 
         private void LimpiarCampos()
         {
             txtNombre.Clear();
-            txtCategoria.Clear();
+            cmbCategoria.SelectedIndex = -1;
             txtPrecio.Clear();
             txtDuracion.Clear();
         }
@@ -147,10 +147,10 @@ namespace ManitoDeGato
                 btnModificar.Visible = false;
                 btnEliminar.Visible = false;
 
-                txtNombre.Enabled = false;
-                txtCategoria.Enabled = false;
-                txtPrecio.Enabled = false;
-                txtDuracion.Enabled = false;
+                txtNombre.Enabled        = false;
+                cmbCategoria.Enabled     = false;
+                txtPrecio.Enabled        = false;
+                txtDuracion.Enabled      = false;
             }
         }
 

@@ -45,7 +45,7 @@ namespace ManitoDeGato
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtCategoria.Text) ||
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || cmbCategoria.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(txtStock.Text)  || string.IsNullOrWhiteSpace(txtPrecio.Text))
             {
                 MessageBox.Show("Por favor completa todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -64,7 +64,7 @@ namespace ManitoDeGato
                 return;
             }
 
-            repositorio.Agregar(new Producto { Nombre = txtNombre.Text.Trim(), Categoria = txtCategoria.Text.Trim(), StockActual = stock, PrecioUnitario = precio });
+            repositorio.Agregar(new Producto { Nombre = txtNombre.Text.Trim(), Categoria = cmbCategoria.SelectedItem!.ToString()!, StockActual = stock, PrecioUnitario = precio });
 
             if (stock <= 5)
                 MessageBox.Show($"Producto agregado. Stock bajo (≤ 5 unidades) — considera reabastecer pronto.", "Aviso de stock", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -97,7 +97,7 @@ namespace ManitoDeGato
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtCategoria.Text) ||
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || cmbCategoria.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(txtStock.Text)  || string.IsNullOrWhiteSpace(txtPrecio.Text))
             {
                 MessageBox.Show("Por favor completa todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -116,7 +116,7 @@ namespace ManitoDeGato
                 return;
             }
 
-            repositorio.Modificar(new Producto { Id = idSeleccionado, Nombre = txtNombre.Text.Trim(), Categoria = txtCategoria.Text.Trim(), StockActual = stock, PrecioUnitario = precio });
+            repositorio.Modificar(new Producto { Id = idSeleccionado, Nombre = txtNombre.Text.Trim(), Categoria = cmbCategoria.SelectedItem!.ToString()!, StockActual = stock, PrecioUnitario = precio });
             MessageBox.Show("Producto modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             idSeleccionado = -1;
             LimpiarCampos();
@@ -130,17 +130,17 @@ namespace ManitoDeGato
                 idSeleccionado = int.Parse(listProductos.SelectedItems[0].SubItems[0].Text);
                 var producto   = repositorio.ObtenerPorId(idSeleccionado);
                 if (producto == null) return;
-                txtNombre.Text   = producto.Nombre;
-                txtCategoria.Text = producto.Categoria;
-                txtStock.Text    = producto.StockActual.ToString();
-                txtPrecio.Text   = producto.PrecioUnitario.ToString();
+                txtNombre.Text            = producto.Nombre;
+                cmbCategoria.SelectedItem = producto.Categoria;
+                txtStock.Text             = producto.StockActual.ToString();
+                txtPrecio.Text            = producto.PrecioUnitario.ToString();
             }
         }
 
         private void LimpiarCampos()
         {
             txtNombre.Clear();
-            txtCategoria.Clear();
+            cmbCategoria.SelectedIndex = -1;
             txtStock.Clear();
             txtPrecio.Clear();
         }
